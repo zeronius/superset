@@ -582,6 +582,12 @@ class BaseTemplateProcessor:
         self._removed_filters = removed_filters
         self._context: dict[str, Any] = {}
         self.env: Environment = SandboxedEnvironment(undefined=DebugUndefined)
+        # self.env.add_extension('jinja2.ext.i18n')
+        # self.env.install_gettext_callables(
+        #     lambda x: get_translations().ugettext(x),
+        #     lambda s, p, n: get_translations().ungettext(s, p, n),
+        #     newstyle=True
+        # )
         self.set_context(**kwargs)
 
         # custom filters

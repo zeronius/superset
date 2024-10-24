@@ -410,6 +410,9 @@ class Chart extends Component {
       logEvent,
     } = this.props;
 
+    // Example of localization inside the React component TODO PCM
+    const localizedSliceName = editMode ? sliceName : t(sliceName)
+
     const { width } = this.state;
     // this prevents throwing in the case that a gridComponent
     // references a chart that is not associated with the dashboard
@@ -454,7 +457,7 @@ class Chart extends Component {
           exportFullCSV={this.exportFullCSV}
           exportFullXLSX={this.exportFullXLSX}
           updateSliceName={updateSliceName}
-          sliceName={sliceName}
+          sliceName={localizedSliceName}
           supersetCanExplore={supersetCanExplore}
           supersetCanShare={supersetCanShare}
           supersetCanCSV={supersetCanCSV}

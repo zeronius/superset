@@ -17,7 +17,7 @@
  * under the License.
  */
 /* eslint-disable camelcase */
-import { FeatureFlag, isFeatureEnabled } from '@superset-ui/core';
+import { FeatureFlag, isFeatureEnabled, t } from '@superset-ui/core';
 import { chart } from 'src/components/Chart/chartReducer';
 import { initSliceEntities } from 'src/dashboard/reducers/sliceEntities';
 import { getInitialState as getInitialNativeFilterState } from 'src/dashboard/reducers/nativeFilters';
@@ -56,14 +56,81 @@ import { FilterBarOrientation } from '../types';
 
 export const HYDRATE_DASHBOARD = 'HYDRATE_DASHBOARD';
 
+const remapObject = (obj, t) => {
+  if (typeof obj !== 'object' || Array.isArray(obj) || obj === null) {
+    return obj;
+  }
+
+  const newObj = {};
+  for (const [key, value] of Object.entries(obj)) {
+    // Clone the current value to avoid mutating the original object
+    const newValue = { ...value };
+    // Check if it has the meta property and sliceNameOverride inside it
+    if (newValue.meta) {
+      if (newValue.meta.sliceNameOverride) {
+        newValue.meta.sliceNameOverride = t(newValue.meta.sliceNameOverride);
+      }
+      if (newValue.meta.code) {
+        newValue.meta.code = t(newValue.meta.code);
+      }
+      if (newValue.meta.text) {
+        newValue.meta.text = t(newValue.meta.text);
+      }
+    }
+    // Assign the modified value to the new object
+    newObj[key] = newValue;
+  }
+  return newObj;
+}
+
+const remapAllAttrs = (obj, t) => {
+  function remap(value) {
+    if (Array.isArray(value)) {
+      // If the value is an array, recursively apply remap to each element
+      return value.map(remap);
+    } else if (typeof value === 'object' && value !== null) {
+      // If the value is an object, recursively apply remap to its properties
+      const newObj = {};
+      for (const key in value) {
+        if (value.hasOwnProperty(key)) {
+          newObj[key] = remap(value[key]);
+        }
+      }
+      return newObj;
+    } else if (typeof value === 'string' && value.startsWith('$$_')) {
+      // If the value is a string and starts with "$$_", replace it using the t() function
+      try {
+        return t(value);
+      } catch (e) {
+        // console.warn('Translation error', e);
+        return value;
+      }
+    }
+    return value;
+  }
+
+  // Start remapping from the top-level object or array
+  return remap(obj);
+}
+
 export const hydrateDashboard =
   ({ history, dashboard, charts, dataMask, activeTabs }) =>
   (dispatch, getState) => {
     const { user, common, dashboardState } = getState();
-    const { metadata, position_data: positionData } = dashboard;
     const regularUrlParams = extractUrlParams('regular');
     const reservedUrlParams = extractUrlParams('reserved');
     const editMode = reservedUrlParams.edit === 'true';
+
+    //TODO PCM tady by se dalo zahackovat, uz se tu vi, ze je v EDIT modu nebo ne
+    console.log("EDIT HEADER xxxx", editMode, dashboardState.editMode);
+    if(!editMode || !dashboardState.editMode){
+      // console.log('hydrateDashboard', dashboard.position_data);
+      // console.log('charts', charts);
+      dashboard.dashboard_title = t(dashboard.dashboard_title);
+      dashboard.position_data = remapObject(dashboard.position_data, t)
+      charts = remapAllAttrs(charts, t);
+    }
+    const { metadata, position_data: positionData } = dashboard;
 
     charts.forEach(chart => {
       // eslint-disable-next-line no-param-reassign
@@ -303,7 +370,7 @@ export const hydrateDashboard =
           css: dashboard.css || '',
           colorNamespace: metadata?.color_namespace || null,
           colorScheme: metadata?.color_scheme || null,
-          editMode: canEdit && editMode,
+          editMode: canEdit && (editMode || dashboardState.editMode),
           isPublished: dashboard.published,
           hasUnsavedChanges: false,
           dashboardIsSaving: false,

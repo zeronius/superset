@@ -81,6 +81,31 @@ const defaultProps = {
   triggerRender: false,
 };
 
+const remapAllAttrs = (obj, t) => {
+  function remap(value) {
+    if (Array.isArray(value)) {
+      // If the value is an array, recursively apply remap to each element
+      return value.map(remap);
+    } else if (typeof value === 'object' && value !== null) {
+      // If the value is an object, recursively apply remap to its properties
+      const newObj = {};
+      for (const key in value) {
+        if (value.hasOwnProperty(key)) {
+          newObj[key] = remap(value[key]);
+        }
+      }
+      return newObj;
+    } else if (typeof value === 'string' && value.startsWith('$$_')) {
+      // If the value is a string and starts with "$$_", replace it using the t() function
+      return t(value);
+    }
+    return value;
+  }
+
+  // Start remapping from the top-level object or array
+  return remap(obj);
+}
+
 class ChartRenderer extends Component {
   constructor(props) {
     super(props);
@@ -128,7 +153,8 @@ class ChartRenderer extends Component {
     // TODO: queriesResponse comes from Redux store but it's being edited by
     // the plugins, hence we need to clone it to avoid state mutation
     // until we change the reducers to use Redux Toolkit with Immer
-    this.mutableQueriesResponse = cloneDeep(this.props.queriesResponse);
+    // TODO PCM here we remap the whole queries response data so it show localized texts in labels, legends, etc (now disabled)
+    this.mutableQueriesResponse = cloneDeep(this.props.queriesResponse); // remapAllAttrs(cloneDeep(this.props.queriesResponse), t);
   }
 
   shouldComponentUpdate(nextProps, nextState) {

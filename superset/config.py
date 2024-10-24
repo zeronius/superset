@@ -53,6 +53,8 @@ from superset.advanced_data_type.plugins.internet_address import internet_addres
 from superset.advanced_data_type.plugins.internet_port import internet_port
 from superset.advanced_data_type.types import AdvancedDataType
 from superset.constants import CHANGE_ME_SECRET_KEY
+from superset.initialization.custom_language_superset_app_initializer import \
+    CustomSupersetAppInitializer
 from superset.jinja_context import BaseTemplateProcessor
 from superset.key_value.types import JsonKeyValueCodec
 from superset.stats_logger import DummyStatsLogger
@@ -1880,6 +1882,29 @@ class ExtraDynamicQueryFilters(TypedDict, total=False):
 
 EXTRA_DYNAMIC_QUERY_FILTERS: ExtraDynamicQueryFilters = {}
 
+FEATURE_FLAGS = {
+    "ENABLE_TEMPLATE_PROCESSING": True,
+}
+
+def translate_text(text):
+    lang = get_language()
+    if lang == "de" and text == "Color":
+        return "Farbe"
+    if lang == "de" and text == "BW":
+        return "SW"
+    return text
+    # from flask_babel import get_translations
+    # return get_translations().ugettext(text)
+
+def get_language():
+    from flask_babel import get_locale
+    locale = get_locale()
+    return locale.language if locale else "en"
+
+JINJA_CONTEXT_ADDONS = {
+    "_": translate_text,
+    "get_language": get_language,
+}
 
 # -------------------------------------------------------------------
 # *                WARNING:  STOP EDITING  HERE                    *
@@ -1918,3 +1943,51 @@ elif importlib.util.find_spec("superset_config") and not is_test():
     except Exception:
         logger.exception("Found but failed to import local superset_config")
         raise
+
+
+# D3_TIME_FORMAT = {
+#     "dateTime": "%B %d, %Y, bubu %X",
+#     "date": "%B %d, %Y",
+#     "time": "%Y-%m-%dT%H:%M:%S.%LZ",
+#     "periods": ["AM", "PM"],
+#     "days": ["Neděle", "Pondělí", "Úterý", "Středa",
+#              "Čtvrtek", "Pátek", "Sobota"],
+#     "shortDays": ["Neděle", "Pondělí", "Tue", "Wed", "Thu", "Fri", "Sat"],
+#     "months": ["Leden", "Únor", "Březen", "Duben",
+#                "Květen", "Červen", "Červenec", "Srpen",
+#                "Září", "Říjen", "November", "December"],
+#     "shortMonths": ["Led", "Ún", "Bře", "Dub",
+#                     "Kvě", "Čer", "Čvc", "Srp",
+#                     "Zář", "Říj", "Nov", "Dec"]
+# }
+
+# D3_FORMAT = {
+#     "decimal": ",",
+#     "thousands": " ",
+#     "grouping": [3]
+# }
+
+LANGUAGES = {
+    "en": {"flag": "us", "name": "English"},
+    "es": {"flag": "es", "name": "Spanish"},
+    "it": {"flag": "it", "name": "Italian"},
+    "fr": {"flag": "fr", "name": "French"},
+    "zh": {"flag": "cn", "name": "Chinese"},
+    "zh_TW": {"flag": "tw", "name": "Traditional Chinese"},
+    "ja": {"flag": "jp", "name": "Japanese"},
+    "de": {"flag": "de", "name": "German"},
+    "pt": {"flag": "pt", "name": "Portuguese"},
+    "pt_BR": {"flag": "br", "name": "Brazilian Portuguese"},
+    "ru": {"flag": "ru", "name": "Russian"},
+    "ko": {"flag": "kr", "name": "Korean"},
+    "sk": {"flag": "sk", "name": "Slovak"},
+    "sl": {"flag": "si", "name": "Slovenian"},
+    "nl": {"flag": "nl", "name": "Dutch"},
+    "uk": {"flag": "ua", "name": "Ukranian"},
+    "tr": {"flag": "tr", "name": "tr"},
+    "ar": {"flag": "ar", "name": "ar"},
+    "cs": {"flag": "cz", "name": "Česky"},
+}
+
+SECRET_KEY = '5Y2XE7e1BenQ3FWBEiE4inIHhVBewLEM8t1uJL771IP+GtP/i0cffwxz'
+APP_INITIALIZER = CustomSupersetAppInitializer
