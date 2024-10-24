@@ -17,16 +17,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Apache Superset 0.22.1\n"
 "Report-Msgid-Bugs-To: bestlong168@gmail.com\n"
-"POT-Creation-Date: 2024-07-03 14:07-0700\n"
+"POT-Creation-Date: 2024-10-23 00:40+0200\n"
 "PO-Revision-Date: 2019-01-04 22:19+0800\n"
 "Last-Translator: Shao Yu-Lung <bestlong168@gmail.com>\n"
 "Language: zh_TW\n"
 "Language-Team: zh_TW <bestlong168@gmail.com>\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.15.0\n"
+"Generated-By: Babel 2.9.1\n"
 
 msgid ""
 "\n"
@@ -68,12 +68,12 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"            Error: %(text)s\n"
+"            <p>Your report/alert was unable to be generated because of "
+"the following error: %(text)s</p>\n"
+"            <p>Please check your dashboard/chart for errors.</p>\n"
+"            <p><b><a href=\"%(url)s\">%(call_to_action)s</a></b></p>\n"
 "            "
 msgstr ""
-"\n"
-"錯誤：%(text)s\n"
-"            "
 
 msgid " (excluded)"
 msgstr "(不包含)"
@@ -91,8 +91,16 @@ msgstr "一個已存在的看板或者"
 msgid " a new one"
 msgstr "另存為新的"
 
+#, python-format
+msgid " at line %(line)d"
+msgstr ""
+
 msgid " expression which needs to adhere to the "
 msgstr " 表達式必須基於 "
+
+#, python-format
+msgid " near '%(highlight)s'"
+msgstr ""
 
 msgid " source code of Superset's sandboxed parser"
 msgstr ""
@@ -347,11 +355,10 @@ msgstr "), 他們在你的 SQL 中會變成有效數據 (比如:"
 msgid ""
 "*%(name)s*\n"
 "\n"
-"%(description)s\n"
+"    %(description)s\n"
 "\n"
-"<%(url)s|Explore in Superset>\n"
-"\n"
-"%(table)s\n"
+"    Error: %(text)s\n"
+"    "
 msgstr ""
 
 #, python-format
@@ -360,7 +367,9 @@ msgid ""
 "\n"
 "%(description)s\n"
 "\n"
-"Error: %(text)s\n"
+"<%(url)s|Explore in Superset>\n"
+"\n"
+"%(table)s\n"
 msgstr ""
 
 #, python-format
@@ -372,6 +381,10 @@ msgid ""
 "clear your cookies or change browsers.\n"
 "\n"
 msgstr "--  注意：除非您保存查詢，否則如果清除 cookie 或更改瀏覽器時，這些選項卡將不會保留。\n"
+
+#, python-format
+msgid "... and %s others"
+msgstr ""
 
 msgid "0 Selected"
 msgstr "0個被選中"
@@ -806,6 +819,14 @@ msgstr "新增"
 msgid "Add Alert"
 msgstr "新增告警"
 
+#, fuzzy
+msgid "Add BCC Recipients"
+msgstr "最近"
+
+#, fuzzy
+msgid "Add CC Recipients"
+msgstr "最近"
+
 msgid "Add CSS template"
 msgstr "新增CSS模板"
 
@@ -1054,6 +1075,14 @@ msgstr "高級數據類型"
 msgid "Advanced-Analytics"
 msgstr "高級分析"
 
+#, fuzzy
+msgid "Affected Charts"
+msgstr "選擇圖表"
+
+#, fuzzy
+msgid "Affected Dashboards"
+msgstr "選擇看板"
+
 msgid "After"
 msgstr "之後"
 
@@ -1198,8 +1227,11 @@ msgstr "在 SQL 編輯器中允許 CREATE VIEW AS 選項"
 msgid "Allow Csv Upload"
 msgstr "允許 Csv 上傳"
 
-msgid "Allow DML"
-msgstr "允許 DML"
+msgid "Allow DDL and DML"
+msgstr ""
+
+msgid "Allow DDL/DML"
+msgstr ""
 
 msgid "Allow changing catalogs"
 msgstr ""
@@ -1230,16 +1262,17 @@ msgstr "允許最終用戶通過拖放列標題來重新排列它們。請注意
 msgid "Allow file uploads to database"
 msgstr "允許上傳文件到資料庫"
 
-msgid ""
-"Allow manipulation of the database using non-SELECT statements such as "
-"UPDATE, DELETE, CREATE, etc."
-msgstr "允許使用非 SELECT 語句(如 UPDATE、DELETE、CREATE 等)操作資料庫。"
-
 msgid "Allow node selections"
 msgstr "允許節點選擇"
 
 msgid "Allow sending multiple polygons as a filter event"
 msgstr "允許使用多個多邊形來過濾事件"
+
+msgid ""
+"Allow the execution of DDL (Data Definition Language: CREATE, DROP, "
+"TRUNCATE, etc.) and DML (Data Modification Language: INSERT, UPDATE, "
+"DELETE, etc)"
+msgstr ""
 
 msgid "Allow this database to be explored"
 msgstr "允許瀏覽此資料庫"
@@ -1807,6 +1840,10 @@ msgstr "軸線升序"
 msgid "Axis descending"
 msgstr "軸線降序"
 
+#, fuzzy
+msgid "BCC recipients"
+msgstr "最近"
+
 msgid "BOOLEAN"
 msgstr "布林值"
 
@@ -2040,6 +2077,10 @@ msgstr "使用度量值作為排序關鍵字"
 
 msgid "CANCEL"
 msgstr "取消"
+
+#, fuzzy
+msgid "CC recipients"
+msgstr "最近"
 
 #, fuzzy
 msgid "CREATE DATASET"
@@ -2541,6 +2582,10 @@ msgid "Choose notification method and recipients."
 msgstr "通知方式"
 
 msgid "Choose one of the available databases from the panel on the left."
+msgstr "從左側的面板中選擇一個可用的資料庫"
+
+#, fuzzy
+msgid "Choose one of the available databases on the left panel."
 msgstr "從左側的面板中選擇一個可用的資料庫"
 
 #, fuzzy
@@ -3433,6 +3478,17 @@ msgstr "看板 [%s] 刚刚被創建，並且圖表 [%s] 已被增加到其中"
 msgid "Dashboard [{}] just got created and chart [{}] was added to it"
 msgstr "看板 [{}] 刚刚被創建，並且圖表 [{}] 已被增加到其中"
 
+msgid "Dashboard cannot be copied due to invalid parameters."
+msgstr ""
+
+#, fuzzy
+msgid "Dashboard cannot be favorited."
+msgstr "看板無法更新。"
+
+#, fuzzy
+msgid "Dashboard cannot be unfavorited."
+msgstr "看板無法更新。"
+
 msgid "Dashboard could not be deleted."
 msgstr "看板無法被删除。"
 
@@ -3445,6 +3501,10 @@ msgstr "看板不存在"
 #, fuzzy
 msgid "Dashboard imported"
 msgstr "看板已導入"
+
+#, fuzzy
+msgid "Dashboard native filters could not be patched."
+msgstr "看板無法更新。"
 
 msgid "Dashboard parameters are invalid."
 msgstr "看板参數無效。"
@@ -4030,9 +4090,10 @@ msgstr "已删除：%s"
 msgid "Deleted: %s"
 msgstr "已删除：%s"
 
+#, fuzzy
 msgid ""
-"Deleting a tab will remove all content within it. You may still reverse "
-"this action with the"
+"Deleting a tab will remove all content within it and will deactivate any "
+"related alerts or reports. You may still reverse this action with the"
 msgstr "删除一個標籤頁將會移除其中的所有内容。您仍然可以回退這個操作，點擊"
 
 msgid "Delimited long & lat single column"
@@ -4584,6 +4645,10 @@ msgstr "嵌入代碼"
 msgid "Embed dashboard"
 msgstr "嵌入看板"
 
+#, fuzzy
+msgid "Embedded dashboard could not be deleted."
+msgstr "看板無法被删除。"
+
 msgid "Embedding deactivated."
 msgstr "解除嵌入。"
 
@@ -4747,6 +4812,10 @@ msgstr "錯誤"
 msgid "Error Fetching Tagged Objects"
 msgstr "獲取標籤對象錯誤"
 
+#, fuzzy
+msgid "Error faving chart"
+msgstr "保存數據集時發生錯誤"
+
 #, python-format
 msgid "Error in jinja expression in HAVING clause: %(msg)s"
 msgstr "jinja 表達式中的 HAVING 子句出錯：%(msg)s"
@@ -4770,6 +4839,10 @@ msgid "Error message"
 msgstr "錯誤訊息"
 
 #, fuzzy
+msgid "Error parsing"
+msgstr "錯誤（暗色）"
+
+#, fuzzy
 msgid "Error reading CSV file"
 msgstr "保存數據集時發生錯誤"
 
@@ -4783,6 +4856,10 @@ msgstr "上傳 Excel"
 
 #, fuzzy
 msgid "Error saving dataset"
+msgstr "保存數據集時發生錯誤"
+
+#, fuzzy
+msgid "Error unfaving chart"
 msgstr "保存數據集時發生錯誤"
 
 msgid "Error while fetching charts"
@@ -5873,10 +5950,6 @@ msgid "Intervals"
 msgstr "間隔"
 
 #, fuzzy
-msgid "Intesity"
-msgstr "强度"
-
-#, fuzzy
 msgid ""
 "Invalid Connection String: Expecting String of the form "
 "'ocient://user:pass@host:port/database'."
@@ -6598,6 +6671,9 @@ msgstr "標記"
 msgid "Markup type"
 msgstr "Markup 類型"
 
+msgid "Match time shift color with original series"
+msgstr ""
+
 msgid "Max"
 msgstr "最大值"
 
@@ -6657,6 +6733,12 @@ msgstr "中位數值"
 
 msgid "Medium"
 msgstr "中"
+
+msgid "Memory in bytes - binary (1024B => 1KiB)"
+msgstr ""
+
+msgid "Memory in bytes - decimal (1024B => 1.024kB)"
+msgstr ""
 
 msgid "Menu actions trigger"
 msgstr ""
@@ -7449,6 +7531,10 @@ msgstr "一個或多個控件作為列進行透視"
 msgid "One or many metrics to display"
 msgstr "一個或多個指標顯示"
 
+#, fuzzy
+msgid "One or more annotation layers failed loading."
+msgstr "一個或多個注释層加载失敗。"
+
 msgid "One or more columns already exist"
 msgstr "一個或多個列已存在"
 
@@ -7476,12 +7562,6 @@ msgstr "查詢中指定的一個或多個参數的格式不正確。"
 
 msgid "One or more parameters specified in the query are missing."
 msgstr "查詢中指定的一個或多個参數丢失。"
-
-msgid "One ore more annotation layers failed loading."
-msgstr "一個或多個注释層加载失敗。"
-
-msgid "Only SELECT statements are allowed against this database."
-msgstr "此資料庫只允許使用 `SELECT` 語句"
 
 msgid "Only Total"
 msgstr "僅總計"
@@ -7587,6 +7667,13 @@ msgstr "按選定列對结果進行排序"
 
 msgid "Ordering"
 msgstr "排序"
+
+msgid ""
+"Orders the query result that generates the source data for this chart. If"
+" a series or row limit is reached, this determines what data are "
+"truncated. If undefined, defaults to the first metric (where "
+"appropriate)."
+msgstr ""
 
 #, fuzzy
 msgid "Orientation"
@@ -7705,10 +7792,6 @@ msgid ""
 "Owners is a list of users who can alter the dashboard. Searchable by name"
 " or username."
 msgstr "所有者是一個用戶列表，這些用戶有權限修改仪表板。可按名稱或用戶名搜索。"
-
-#, fuzzy
-msgid "PDF download failed, please refresh and try again."
-msgstr "PDF 下载失敗，請刷新重試。"
 
 msgid "Page length"
 msgstr "頁長"
@@ -8157,6 +8240,9 @@ msgstr "主 Y 軸界限"
 msgid "Primary y-axis format"
 msgstr "主 Y 軸格式"
 
+msgid "Private Channels (Bot in channel)"
+msgstr ""
+
 msgid "Private Key"
 msgstr "私鑰"
 
@@ -8424,6 +8510,10 @@ msgstr "刷新間隔"
 msgid "Refresh interval saved"
 msgstr "刷新間隔已保存"
 
+#, fuzzy
+msgid "Refresh table schema"
+msgstr "查看表結構"
+
 msgid "Refresh the default values"
 msgstr "刷新預設值"
 
@@ -8664,6 +8754,10 @@ msgstr "後端未配置结果"
 
 msgid "Results backend needed for asynchronous queries is not configured."
 msgstr "後端未配置異步查詢所需的结果"
+
+#, fuzzy
+msgid "Retry fetching results"
+msgstr "重新獲取结果"
 
 msgid "Return to specific datetime."
 msgstr "返回指定的日期時間。"
@@ -9320,6 +9414,10 @@ msgstr "指定一個模式(需要資料庫支持)"
 msgid "Select a sheet name from the uploaded file"
 msgstr "選擇將要上傳文件的資料庫"
 
+#, fuzzy
+msgid "Select a tab"
+msgstr "選擇數據集"
+
 msgid ""
 "Select a time grain for the visualization. The grain is the time interval"
 " represented by a single point on the chart."
@@ -9345,6 +9443,10 @@ msgstr "選擇任意列進行元數據巡檢"
 #, fuzzy
 msgid "Select catalog or type to search catalogs"
 msgstr "選擇表或输入表名來搜索"
+
+#, fuzzy
+msgid "Select channels"
+msgstr "選擇圖表"
 
 #, fuzzy
 msgid "Select chart"
@@ -9472,6 +9574,10 @@ msgstr "選擇方案"
 
 msgid "Select subject"
 msgstr "選擇主題"
+
+#, fuzzy
+msgid "Select tab"
+msgstr "反選所有"
 
 #, fuzzy
 msgid "Select table or type to search tables"
@@ -9632,6 +9738,10 @@ msgstr "Sheet名稱"
 
 msgid "Shift + Click to sort by multiple columns"
 msgstr ""
+
+#, fuzzy
+msgid "Shift start date"
+msgstr "開始時間"
 
 msgid "Short description must be unique for this layer"
 msgstr "此層的简述必須是唯一的"
@@ -9941,6 +10051,11 @@ msgstr ""
 msgid "Some roles do not exist"
 msgstr "看板"
 
+msgid ""
+"Something went wrong with embedded authentication. Check the dev console "
+"for details."
+msgstr ""
+
 #, fuzzy
 msgid "Something went wrong."
 msgstr "抱歉，出了點問題。請稍後再試。"
@@ -10051,6 +10166,10 @@ msgstr "排序過濾器值"
 
 msgid "Sort metric"
 msgstr "排序指標"
+
+#, fuzzy
+msgid "Sort query by"
+msgstr "導出查詢"
 
 msgid "Sort rows by"
 msgstr "排序 "
@@ -10357,6 +10476,12 @@ msgid ""
 "well."
 msgstr "用於可視化時間序列數據。在步進圖、折線圖、散點圖和條形圖之間進行選擇,也有許多自定義選項"
 
+msgid "Switch to the next tab"
+msgstr ""
+
+msgid "Switch to the previous tab"
+msgstr ""
+
 msgid "Symbol"
 msgstr "符號"
 
@@ -10378,10 +10503,6 @@ msgstr ""
 
 msgid "TABLES"
 msgstr "表"
-
-#, fuzzy
-msgid "TEMPORAL X-AXIS"
-msgstr "時間X軸"
 
 #, fuzzy
 msgid "TEMPORAL_RANGE"
@@ -10531,6 +10652,10 @@ msgid ""
 "coming from the controls."
 msgstr "模板链接，可以包含{{metric}}或來自控件的其他值。"
 
+#, fuzzy
+msgid "Temporal X-Axis"
+msgstr "時間條件"
+
 msgid ""
 "Terminate running queries when browser window closed or navigated to "
 "another page. Available for Presto, Hive, MySQL, Postgres and Snowflake "
@@ -10576,10 +10701,6 @@ msgid ""
 "The GeoJsonLayer takes in GeoJSON formatted data and renders it as "
 "interactive polygons, lines and points (circles, icons and/or texts)."
 msgstr ""
-
-#, fuzzy
-msgid "The SQL is invalid and cannot be parsed."
-msgstr "提供的主機名無法解析。"
 
 msgid ""
 "The Sankey chart visually tracks the movement and transformation of "
@@ -10686,14 +10807,9 @@ msgid ""
 "most case users should not need to alter this."
 msgstr "由資料庫推斷的數據類型。在某些情况下，可能需要為表達式定義的列手工输入一個類型。在大多數情况下，用戶不需要修改這個數據類型。"
 
-#, python-format
-msgid ""
-"The database %s is linked to %s charts that appear on %s dashboards and "
-"users have %s SQL Lab tabs using this database open. Are you sure you "
-"want to continue? Deleting the database will break those objects."
-msgstr ""
-"資料庫 %s 已經關聯了 %s 圖表和 %s 看板，並且用戶在該資料庫上打開了 %s 個 SQL "
-"編輯器選項卡。確定要繼續嗎？删除資料庫將破坏這些對象。"
+#, fuzzy
+msgid "The database"
+msgstr "删除資料庫"
 
 #, fuzzy
 msgid "The database columns that contains lines information"
@@ -10717,18 +10833,19 @@ msgstr "找不到此查詢中引用的資料庫。請與管理員聯繫以獲得
 msgid "The database returned an unexpected error."
 msgstr "資料庫返回意外錯誤。"
 
+#, fuzzy
+msgid "The database that was used to generate this query could not be found"
+msgstr "資料庫没有找到"
+
 msgid "The database was deleted."
 msgstr "資料庫已删除。"
 
 msgid "The database was not found."
 msgstr "資料庫没有找到"
 
-#, python-format
-msgid ""
-"The dataset %s is linked to %s charts that appear on %s dashboards. Are "
-"you sure you want to continue? Deleting the dataset will break those "
-"objects."
-msgstr "數據集 %s 已經链接到 %s 圖表和 %s 看板内。確定要繼續嗎？删除數據集將破坏這些對象。"
+#, fuzzy
+msgid "The dataset"
+msgstr "新數據集"
 
 msgid "The dataset associated with this chart no longer exists"
 msgstr "這個圖表所链接的數據集可能被删除了。"
@@ -10886,6 +11003,12 @@ msgid ""
 msgstr ""
 "顯示值所需的滚動週期的最小值。例如，如果您想累積 7 天的總額，您可能希望您的“最小週期”為 7，以便顯示的所有數據點都是 7 "
 "個區間的總和。這將隐藏掉前 7 個階段的“加速”效果"
+
+#, fuzzy
+msgid ""
+"The minimum value of metrics. It is an optional configuration. If not "
+"set, it will be the minimum value of the data"
+msgstr "度量的最大值。這是一個可選配置"
 
 #, fuzzy
 msgid "The name of the rule must be unique"
@@ -11096,6 +11219,9 @@ msgid ""
 "function)."
 msgstr ""
 
+msgid "The result size exceeds the allowed limit."
+msgstr ""
+
 msgid "The results backend no longer has the data from the query."
 msgstr "结果後端不再拥有來自查詢的數據。"
 
@@ -11129,6 +11255,15 @@ msgstr ""
 
 msgid "The schema was deleted or renamed in the database."
 msgstr "該模式已在資料庫中删除或重命名。"
+
+msgid "The screenshot could not be downloaded. Please, try again later."
+msgstr ""
+
+msgid "The screenshot is being generated. Please, do not leave the page."
+msgstr ""
+
+msgid "The screenshot is now being downloaded."
+msgstr ""
 
 #, fuzzy
 msgid "The size of each cell in meters"
@@ -11294,8 +11429,9 @@ msgstr "抱歉，獲取資料庫訊息時出錯：%s"
 msgid "There was an error fetching the favorite status: %s"
 msgstr "獲取此看板的收藏夹狀態時出現問題：%s。"
 
-msgid "There was an error fetching your recent activity:"
-msgstr "獲取您最近的活動時出錯："
+#, fuzzy
+msgid "There was an error fetching the filtered charts and dashboards:"
+msgstr "獲取此看板的收藏夹狀態時出現問題：%s。"
 
 #, fuzzy
 msgid "There was an error loading the catalogs"
@@ -11314,6 +11450,10 @@ msgstr "抱歉，這個看板在獲取圖表時發生錯誤："
 
 msgid "There was an error loading the tables"
 msgstr "您的請求有錯誤"
+
+#, fuzzy, python-format
+msgid "There was an error retrieving dashboard tabs."
+msgstr "抱歉，這個看板在保存時發生錯誤：%s"
 
 #, python-format
 msgid "There was an error saving the favorite status: %s"
@@ -11539,6 +11679,12 @@ msgstr "此仪表板已准备好嵌入。在您的應用程序中，將以下 ID
 msgid "This dashboard was saved successfully."
 msgstr "該看板已成功保存。"
 
+msgid ""
+"This database does not allow for DDL/DML, and the query could not be "
+"parsed to confirm it is a read-only query. Please contact your "
+"administrator for more assistance."
+msgstr ""
+
 msgid "This database is managed externally, and can't be edited in Superset"
 msgstr ""
 
@@ -11604,17 +11750,15 @@ msgid "This may be triggered by:"
 msgstr "這可能由以下因素觸發："
 
 #, fuzzy
-msgid ""
-"This metric is used to define row selection criteria (how the rows are "
-"sorted) if a series or row limit is present. If not defined, it reverts "
-"to the first metric (where appropriate)."
-msgstr "如果存在序列或行限制，则用於定義頂部序列的排序方式的度量。如果未定義，则返回第一個度量（如果適用）。"
-
-#, fuzzy
 msgid "This metric might be incompatible with current dataset"
 msgstr "此圖表可能與過濾器不兼容(數據集不匹配)"
 
 msgid "This option has been disabled by the administrator."
+msgstr ""
+
+msgid ""
+"This page is intended to be embedded in an iframe, but it looks like that"
+" is not the case."
 msgstr ""
 
 #, fuzzy
@@ -12118,6 +12262,9 @@ msgid ""
 "later. Please contact your administrator if this problem persists."
 msgstr "無法將表結構狀態遷移到後端。系统將稍後重試。如果此問題仍然存在，請與管理員聯繫。"
 
+msgid "Unable to parse SQL"
+msgstr ""
+
 msgid "Unable to retrieve dashboard colors"
 msgstr ""
 
@@ -12161,6 +12308,10 @@ msgstr "未知 Doris 服務器主機 \"%(hostname)s\"."
 #, python-format
 msgid "Unknown MySQL server host \"%(hostname)s\"."
 msgstr "未知 MySQL 服務器主機 \"%(hostname)s\"."
+
+#, fuzzy, python-format
+msgid "Unknown OceanBase server host \"%(hostname)s\"."
+msgstr "未知 Doris 服務器主機 \"%(hostname)s\"."
 
 msgid "Unknown Presto Error"
 msgstr "未知 Presto 錯誤"
@@ -12819,6 +12970,11 @@ msgid ""
 msgstr "當對次要時間列進行篩選時，將相同的篩選條件應用到主日期時間列。"
 
 msgid ""
+"When unchecked, colors from the selected color scheme will be used for "
+"time shifted series"
+msgstr ""
+
+msgid ""
 "When using \"Autocomplete filters\", this can be used to improve "
 "performance of the query fetching the values. Use this option to apply a "
 "predicate (WHERE clause) to the query selecting the distinct values from "
@@ -12987,9 +13143,10 @@ msgstr "是否在瀏覽視圖的過濾器部分中填充過濾器的下拉列表
 msgid "Whether to show as Nightingale chart."
 msgstr "是否顯示量規圖進度"
 
+#, fuzzy
 msgid ""
 "Whether to show extra controls or not. Extra controls include things like"
-" making mulitBar charts stacked or side by side."
+" making multiBar charts stacked or side by side."
 msgstr "是否顯示額外的控件。額外的控制包括使多欄圖表堆叠或並排。"
 
 msgid "Whether to show minor ticks on the axis"
@@ -13758,9 +13915,6 @@ msgstr ""
 msgid "default"
 msgstr "預設"
 
-msgid "delete"
-msgstr "删除"
-
 msgid "descendant"
 msgstr "降序"
 
@@ -13918,6 +14072,10 @@ msgid "in modal"
 msgstr "（在模型中）"
 
 #, fuzzy
+msgid "invalid email"
+msgstr "無效狀態。"
+
+#, fuzzy
 msgid "is expected to be a Mapbox URL"
 msgstr "應該為 MapBox 的 URL"
 
@@ -13926,6 +14084,21 @@ msgstr "應該為數字"
 
 msgid "is expected to be an integer"
 msgstr "應該為整數"
+
+#, fuzzy, python-format
+msgid ""
+"is linked to %s charts that appear on %s dashboards and users have %s SQL"
+" Lab tabs using this database open. Are you sure you want to continue? "
+"Deleting the database will break those objects."
+msgstr ""
+"資料庫 %s 已經關聯了 %s 圖表和 %s 看板，並且用戶在該資料庫上打開了 %s 個 SQL "
+"編輯器選項卡。確定要繼續嗎？删除資料庫將破坏這些對象。"
+
+#, fuzzy, python-format
+msgid ""
+"is linked to %s charts that appear on %s dashboards. Are you sure you "
+"want to continue? Deleting the dataset will break those objects."
+msgstr "數據集 %s 已經链接到 %s 圖表和 %s 看板内。確定要繼續嗎？删除數據集將破坏這些對象。"
 
 msgid "key a-z"
 msgstr "a-z 鍵"
@@ -14276,9 +14449,6 @@ msgstr "方差"
 #, fuzzy
 msgid "view instructions"
 msgstr "查看指引"
-
-msgid "virtual"
-msgstr "虛擬"
 
 #, fuzzy
 msgid "viz type"

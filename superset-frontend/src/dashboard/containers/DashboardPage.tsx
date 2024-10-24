@@ -92,6 +92,11 @@ export const DashboardPage: FC<PageProps> = ({ idOrSlug }: PageProps) => {
     status,
   } = useDashboardDatasets(idOrSlug);
   const isDashboardHydrated = useRef(false);
+  // TODO PCM This could somehow solve situation when we switch edit mode => reload sources or remember original (not translated values)
+  //meanwhile it works with `&edit=true` url request param
+  const editMode = useSelector<RootState, boolean>(
+    state => state.dashboardState.editMode,
+  );
 
   const error = dashboardApiError || chartsApiError;
   const readyToRender = Boolean(dashboard && charts);
@@ -161,7 +166,7 @@ export const DashboardPage: FC<PageProps> = ({ idOrSlug }: PageProps) => {
     }
     if (id) getDataMaskApplied();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [readyToRender]);
+  }, [readyToRender, editMode]);
 
   useEffect(() => {
     if (dashboard_title) {

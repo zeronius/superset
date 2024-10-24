@@ -6,29 +6,27 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
+# http://www.apache.org/licenses/LICENSE-2.0
 # Unless required by applicable law or agreed to in writing,
 # software distributed under the License is distributed on an
 # "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-
-# Translations template for Superset.
+# Czech translations for Superset.
 # Copyright (C) 2024 Superset
 # This file is distributed under the same license as the Superset project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
-#
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Superset VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2024-10-23 00:40+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2024-10-23 00:37+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: cs\n"
+"Language-Team: cs <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -225,6 +223,7 @@ msgid_plural ""
 "\"%(undefinedParameter)s\"?"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #, python-format
 msgid "%(type)s File"
@@ -300,6 +299,7 @@ msgid "%s option"
 msgid_plural "%s options"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #, python-format
 msgid "%s option(s)"
@@ -314,6 +314,7 @@ msgid "%s row"
 msgid_plural "%s rows"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #, python-format
 msgid "%s saved metric(s)"
@@ -347,11 +348,10 @@ msgstr ""
 msgid ""
 "*%(name)s*\n"
 "\n"
-"%(description)s\n"
+"    %(description)s\n"
 "\n"
-"<%(url)s|Explore in Superset>\n"
-"\n"
-"%(table)s\n"
+"    Error: %(text)s\n"
+"    "
 msgstr ""
 
 #, python-format
@@ -360,7 +360,9 @@ msgid ""
 "\n"
 "%(description)s\n"
 "\n"
-"Error: %(text)s\n"
+"<%(url)s|Explore in Superset>\n"
+"\n"
+"%(table)s\n"
 msgstr ""
 
 #, python-format
@@ -775,6 +777,12 @@ msgstr ""
 msgid "Add Alert"
 msgstr ""
 
+msgid "Add BCC Recipients"
+msgstr ""
+
+msgid "Add CC Recipients"
+msgstr ""
+
 msgid "Add CSS template"
 msgstr ""
 
@@ -930,6 +938,7 @@ msgid "Added to 1 dashboard"
 msgid_plural "Added to %s dashboards"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 msgid "Additional Parameters"
 msgstr ""
@@ -1009,6 +1018,7 @@ msgstr ""
 msgid "Affected Charts"
 msgstr ""
 
+#, fuzzy, python-format
 msgid "Affected Dashboards"
 msgstr ""
 
@@ -1733,6 +1743,9 @@ msgstr ""
 msgid "Axis descending"
 msgstr ""
 
+msgid "BCC recipients"
+msgstr ""
+
 msgid "BOOLEAN"
 msgstr ""
 
@@ -1946,6 +1959,9 @@ msgid "By value: use metric values as sorting key"
 msgstr ""
 
 msgid "CANCEL"
+msgstr ""
+
+msgid "CC recipients"
 msgstr ""
 
 msgid "CREATE DATASET"
@@ -2239,6 +2255,7 @@ msgid "Chart Owner: %s"
 msgid_plural "Chart Owners: %s"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 msgid "Chart Source"
 msgstr ""
@@ -2408,6 +2425,9 @@ msgid "Choose notification method and recipients."
 msgstr ""
 
 msgid "Choose one of the available databases from the panel on the left."
+msgstr ""
+
+msgid "Choose one of the available databases on the left panel."
 msgstr ""
 
 msgid "Choose sheet name"
@@ -3278,7 +3298,7 @@ msgid "Dashboard usage"
 msgstr ""
 
 msgid "Dashboards"
-msgstr ""
+msgstr "Dežbordy"
 
 msgid "Dashboards could not be created."
 msgstr ""
@@ -3757,54 +3777,63 @@ msgid "Deleted %(num)d annotation"
 msgid_plural "Deleted %(num)d annotations"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #, python-format
 msgid "Deleted %(num)d annotation layer"
 msgid_plural "Deleted %(num)d annotation layers"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #, python-format
 msgid "Deleted %(num)d chart"
 msgid_plural "Deleted %(num)d charts"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #, python-format
 msgid "Deleted %(num)d css template"
 msgid_plural "Deleted %(num)d css templates"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #, python-format
 msgid "Deleted %(num)d dashboard"
 msgid_plural "Deleted %(num)d dashboards"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #, python-format
 msgid "Deleted %(num)d dataset"
 msgid_plural "Deleted %(num)d datasets"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #, python-format
 msgid "Deleted %(num)d report schedule"
 msgid_plural "Deleted %(num)d report schedules"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #, python-format
 msgid "Deleted %(num)d rules"
 msgid_plural "Deleted %(num)d rules"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #, python-format
 msgid "Deleted %(num)d saved query"
 msgid_plural "Deleted %(num)d saved queries"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #, python-format
 msgid "Deleted %s"
@@ -4077,11 +4106,13 @@ msgid "Drop a column here or click"
 msgid_plural "Drop columns here or click"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 msgid "Drop a column/metric here or click"
 msgid_plural "Drop columns/metrics here or click"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 msgid "Drop a temporal column here or click"
 msgstr ""
@@ -7231,9 +7262,6 @@ msgid ""
 " or username."
 msgstr ""
 
-msgid "PDF download failed, please refresh and try again."
-msgstr ""
-
 msgid "Page length"
 msgstr ""
 
@@ -7489,6 +7517,7 @@ msgid "Please reach out to the Chart Owner for assistance."
 msgid_plural "Please reach out to the Chart Owners for assistance."
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 msgid "Please save the query to enable sharing"
 msgstr ""
@@ -7655,6 +7684,9 @@ msgid "Primary y-axis Bounds"
 msgstr ""
 
 msgid "Primary y-axis format"
+msgstr ""
+
+msgid "Private Channels (Bot in channel)"
 msgstr ""
 
 msgid "Private Key"
@@ -8759,6 +8791,9 @@ msgstr ""
 msgid "Select catalog or type to search catalogs"
 msgstr ""
 
+msgid "Select channels"
+msgstr ""
+
 msgid "Select chart"
 msgstr ""
 
@@ -9019,6 +9054,9 @@ msgstr ""
 msgid "Shift + Click to sort by multiple columns"
 msgstr ""
 
+msgid "Shift start date"
+msgstr ""
+
 msgid "Short description must be unique for this layer"
 msgstr ""
 
@@ -9093,7 +9131,7 @@ msgid "Show Tooltip Labels"
 msgstr ""
 
 msgid "Show Total"
-msgstr ""
+msgstr "Ukaž celkem 1"
 
 msgid "Show Trend Line"
 msgstr ""
@@ -9310,6 +9348,11 @@ msgid "Solid"
 msgstr ""
 
 msgid "Some roles do not exist"
+msgstr ""
+
+msgid ""
+"Something went wrong with embedded authentication. Check the dev console "
+"for details."
 msgstr ""
 
 msgid "Something went wrong."
@@ -10032,6 +10075,9 @@ msgstr ""
 msgid "The database returned an unexpected error."
 msgstr ""
 
+msgid "The database that was used to generate this query could not be found"
+msgstr ""
+
 msgid "The database was deleted."
 msgstr ""
 
@@ -10254,6 +10300,7 @@ msgid "The parameter %(parameters)s in your query is undefined."
 msgid_plural "The following parameters in your query are undefined: %(parameters)s."
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #, python-format
 msgid "The password provided for username \"%(username)s\" is incorrect."
@@ -10425,6 +10472,15 @@ msgstr ""
 msgid "The schema was deleted or renamed in the database."
 msgstr ""
 
+msgid "The screenshot could not be downloaded. Please, try again later."
+msgstr ""
+
+msgid "The screenshot is being generated. Please, do not leave the page."
+msgstr ""
+
+msgid "The screenshot is now being downloaded."
+msgstr ""
+
 msgid "The size of each cell in meters"
 msgstr ""
 
@@ -10579,7 +10635,7 @@ msgstr ""
 msgid "There was an error fetching the favorite status: %s"
 msgstr ""
 
-msgid "There was an error fetching your recent activity:"
+msgid "There was an error fetching the filtered charts and dashboards:"
 msgstr ""
 
 msgid "There was an error loading the catalogs"
@@ -10892,6 +10948,11 @@ msgid "This option has been disabled by the administrator."
 msgstr ""
 
 msgid ""
+"This page is intended to be embedded in an iframe, but it looks like that"
+" is not the case."
+msgstr ""
+
+msgid ""
 "This section allows you to configure how to use the slice\n"
 "              to generate annotations."
 msgstr ""
@@ -10934,6 +10995,7 @@ msgid "This was triggered by:"
 msgid_plural "This may be triggered by:"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 msgid ""
 "This will be applied to the whole table. Arrows (↑ and ↓) will be added "
@@ -11179,7 +11241,7 @@ msgid "Top to Bottom"
 msgstr ""
 
 msgid "Total"
-msgstr ""
+msgstr "Celkem"
 
 #, python-format
 msgid "Total (%(aggfunc)s)"
@@ -11194,7 +11256,7 @@ msgstr ""
 
 #, python-format
 msgid "Total: %s"
-msgstr ""
+msgstr "Celkem: %s"
 
 msgid "Track job"
 msgstr ""
@@ -11410,6 +11472,10 @@ msgstr ""
 
 #, python-format
 msgid "Unknown MySQL server host \"%(hostname)s\"."
+msgstr ""
+
+#, python-format
+msgid "Unknown OceanBase server host \"%(hostname)s\"."
 msgstr ""
 
 msgid "Unknown Presto Error"
@@ -11976,6 +12042,7 @@ msgid_plural ""
 "after %s seconds."
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #, python-format
 msgid ""
@@ -11986,6 +12053,7 @@ msgid_plural ""
 "timeout after %s seconds."
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 msgid "What should be shown as the label"
 msgstr ""
@@ -12195,7 +12263,7 @@ msgstr ""
 
 msgid ""
 "Whether to show extra controls or not. Extra controls include things like"
-" making mulitBar charts stacked or side by side."
+" making multiBar charts stacked or side by side."
 msgstr ""
 
 msgid "Whether to show minor ticks on the axis"
@@ -13045,6 +13113,9 @@ msgid "in"
 msgstr ""
 
 msgid "in modal"
+msgstr ""
+
+msgid "invalid email"
 msgstr ""
 
 msgid "is expected to be a Mapbox URL"

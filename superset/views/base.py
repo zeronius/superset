@@ -74,6 +74,7 @@ from superset.utils.filters import get_dataset_access_filters
 from superset.views.error_handling import json_error_response
 
 from .utils import bootstrap_user_data
+from ..initialization.request_locale_resolver import D3_NUMBER_FORMATS, D3_TIME_FORMATS
 
 FRONTEND_CONF_KEYS = (
     "SUPERSET_WEBSERVER_TIMEOUT",
@@ -293,6 +294,8 @@ def menu_data(user: User) -> dict[str, Any]:
             "user_logout_url": appbuilder.get_url_for_logout,
             "user_login_url": appbuilder.get_url_for_login,
             "locale": session.get("locale", "en"),
+            # TODO PCM line above seems as a bug, shouldn't be there rather:
+            # "locale": session.get("locale", get_locale().language),
         },
     }
 
@@ -334,8 +337,8 @@ def cached_common_bootstrap_data(  # pylint: disable=unused-argument
         "conf": frontend_config,
         "locale": language,
         "language_pack": get_language_pack(language),
-        "d3_format": conf.get("D3_FORMAT"),
-        "d3_time_format": conf.get("D3_TIME_FORMAT"),
+        "d3_format": D3_NUMBER_FORMATS.get(language, conf.get("D3_FORMAT")),
+        "d3_time_format": D3_TIME_FORMATS.get(language, conf.get("D3_TIME_FORMAT")),
         "currencies": conf.get("CURRENCIES"),
         "feature_flags": get_feature_flags(),
         "extra_sequential_color_schemes": conf["EXTRA_SEQUENTIAL_COLOR_SCHEMES"],
