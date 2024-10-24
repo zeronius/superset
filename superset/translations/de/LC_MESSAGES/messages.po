@@ -15108,3 +15108,37 @@ msgstr "Jahr"
 
 msgid "zoom area"
 msgstr "Zoombereich"
+
+#Collect somehow from exported Dashborads
+msgid "Trend users"
+msgstr "Trendbenutzer"
+
+msgid "Trend devices"
+msgstr "Trendgeräte"
+
+msgid "## Overall usage"
+msgstr "## Gesamtnutzung"
+
+msgid "Overview"
+msgstr "Übersicht"
+
+msgid "Used workflows"
+msgstr "Verwendete Workflows"
+
+msgid "Active departments"
+msgstr "Aktive Abteilung"
+
+msgid "$$_MoM"
+msgstr "MonatOM"
+
+msgid "$$_Active users"
+msgstr "Aktive Benutzer"
+
+msgid "$$_Color"
+msgstr "Farbe"
+
+msgid "$$_BW"
+msgstr "SW"
+
+msgid "[WIP] SAFEQ Cloud OVERVIEW DASHBOARD"
+msgstr "[WIP] SAFEQ Cloud ÜBERSICHTSDASHBOARD"
