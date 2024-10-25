@@ -50,5 +50,5 @@ def get_language_pack(locale: str) -> Optional[dict[str, Any]]:
             logger.error(
                 "Error loading language pack for, falling back on en %s", locale
             )
-            pack = get_language_pack("en")
+            pack = get_language_pack("en") #TODO PCM must be solved too
     return pack
