@@ -293,6 +293,8 @@ def menu_data(user: User) -> dict[str, Any]:
             "user_logout_url": appbuilder.get_url_for_logout,
             "user_login_url": appbuilder.get_url_for_login,
             "locale": session.get("locale", "en"),
+            # TODO PCM line above seems as a bug, shouldn't be there rather:
+            # "locale": session.get("locale", get_locale().language),
         },
     }
 
