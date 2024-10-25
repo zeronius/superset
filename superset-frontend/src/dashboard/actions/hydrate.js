@@ -118,7 +118,7 @@ export const hydrateDashboard =
     if(!editMode || !dashboardState.editMode){
       // console.log('hydrateDashboard', dashboard.position_data);
       // console.log('charts', charts);
-      dashboard.dashboard_title = t(dashboard.dashboard_title);
+      dashboard.dashboard_title = "Loc0: " + t(dashboard.dashboard_title);
       dashboard.position_data = remapObject(dashboard.position_data, t)
       charts = remapAllAttrs(charts, t);
     }
