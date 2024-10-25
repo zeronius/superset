@@ -3291,7 +3291,7 @@ msgid "Dashboard usage"
 msgstr ""
 
 msgid "Dashboards"
-msgstr ""
+msgstr "Dashboards EN PCM"
 
 msgid "Dashboards could not be created."
 msgstr ""
@@ -6658,7 +6658,7 @@ msgid "No %s yet"
 msgstr ""
 
 msgid "No Data"
-msgstr ""
+msgstr "No data PCM"
 
 msgid "No Results"
 msgstr ""
@@ -6710,7 +6710,7 @@ msgid "No dashboards yet"
 msgstr ""
 
 msgid "No data"
-msgstr ""
+msgstr "No data PCM2"
 
 msgid "No data after filtering or data is NULL for the latest time record"
 msgstr ""
@@ -12901,7 +12901,7 @@ msgid "dashboard"
 msgstr ""
 
 msgid "dashboards"
-msgstr ""
+msgstr "Dashboards EN PCM2"
 
 msgid "database"
 msgstr ""
@@ -13476,3 +13476,18 @@ msgstr ""
 
 msgid "zoom area"
 msgstr ""
+
+
+#Collect somehow from exported Dashborads
+msgid "Trend users"
+msgstr "XXXX Trend users"
+
+msgid "Trend devices"
+msgstr "XXXX Trend devices"
+
+msgid "## Overall usage"
+msgstr "Overall usage"
+
+msgid "Overview"
+msgstr "XXXX Overview"
+
