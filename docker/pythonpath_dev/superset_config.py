@@ -117,3 +117,49 @@ try:
     )
 except ImportError:
     logger.info("Using default Docker config...")
+
+# Testing config for docker
+# TODO PCM implement in our customization
+D3_TIME_FORMAT = {
+     "dateTime": "%B %d, %Y, bubu %X",
+     "date": "%B %d, %Y",
+     "time": "%Y-%m-%dT%H:%M:%S.%LZ",
+     "periods": ["AM", "PM"],
+     "days": ["Neděle", "Pondělí", "Úterý", "Středa",
+              "Čtvrtek", "Pátek", "Sobota"],
+     "shortDays": ["Neděle", "Pondělí", "Tue", "Wed", "Thu", "Fri", "Sat"],
+     "months": ["Leden", "Únor", "Březen", "Duben",
+                "Květen", "Červen", "Červenec", "Srpen",
+                "Září", "Říjen", "November", "December"],
+     "shortMonths": ["Led", "Ún", "Bře", "Dub",
+                     "Kvě", "Čer", "Čvc", "Srp",
+                     "Zář", "Říj", "Nov", "Dec"]
+ }
+
+D3_FORMAT = {
+     "decimal": ",",
+     "thousands": " ",
+     "grouping": [3]
+ }
+
+LANGUAGES = {
+    "en": {"flag": "us", "name": "English"},
+    "es": {"flag": "es", "name": "Spanish"},
+    "it": {"flag": "it", "name": "Italian"},
+    "fr": {"flag": "fr", "name": "French"},
+    "zh": {"flag": "cn", "name": "Chinese"},
+    "zh_TW": {"flag": "tw", "name": "Traditional Chinese"},
+    "ja": {"flag": "jp", "name": "Japanese"},
+    "de": {"flag": "de", "name": "German"},
+    "pt": {"flag": "pt", "name": "Portuguese"},
+    "pt_BR": {"flag": "br", "name": "Brazilian Portuguese"},
+    "ru": {"flag": "ru", "name": "Russian"},
+    "ko": {"flag": "kr", "name": "Korean"},
+    "sk": {"flag": "sk", "name": "Slovak"},
+    "sl": {"flag": "si", "name": "Slovenian"},
+    "nl": {"flag": "nl", "name": "Dutch"},
+    "uk": {"flag": "uk", "name": "Ukranian"},
+    "tr": {"flag": "tr", "name": "tr"},
+    "ar": {"flag": "ar", "name": "ar"},
+    "cs": {"flag": "cs", "name": "Česky"},
+}
